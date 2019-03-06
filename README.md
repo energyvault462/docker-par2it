@@ -9,3 +9,5 @@ To build:
 
 To run:
 ./parit /path/to/folder/to/par
+
+It will create a log at ~/ and will rename it when finished. 
