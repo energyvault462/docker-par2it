@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+  then
+    echo "No arguments given. To run use:"
+    echo "./parit /path/to/files/to/par"
+    exit 1
+fi
+
+docker run --rm --name=par -d \
+  -v $HOME/.gitconfig:/home/brent/.gitconfig \
+  -v $HOME/.ssh:/home/brent/.ssh \
+  -v $HOME:/logs \
+  -v $1:/data \
+  -e PUSHOVER_USER_TKN=${PUSHOVER_USER_TKN} \
+  -e PUSHOVER_APP_TKN=${PUSHOVER_PAR_TKN} \
+  par
