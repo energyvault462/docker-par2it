@@ -7,7 +7,7 @@ if [ $# -eq 0 ]
     exit 1
 fi
 
-docker run --rm --name=par -d \
+docker run --rm --cpus=1.5 --name=par -d \
   -v $HOME/.gitconfig:/home/brent/.gitconfig \
   -v $HOME/.ssh:/home/brent/.ssh \
   -v $HOME:/logs \
